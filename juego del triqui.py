@@ -6,7 +6,7 @@ import os
 #INICIO DEL JUEGO
 
 def inicio_juego():
-    print("Inicio del Juego")
+    print("INICIO DEL JUEGO")
     time.sleep(1)
     while True:
         ficha=input("seleccione ficha: X / O\n")
@@ -20,7 +20,7 @@ def inicio_juego():
             ordenador="X"
             break
         else:
-            print("por favoe, introduce una ficha posible")
+            print("por favor, introduce una ficha posible")
     return(humano,ordenador)
 
 
@@ -30,15 +30,15 @@ def tablero():
     print("JUEGO DEL TRIQUI")
     print()
     print("        |        |        ")
-    print("1  {}    |2  {}   |3  {}      ".format(matriz[0],matriz[1],matriz[2]))
+    print("1  {}    |2   {}   |3  {}      ".format(matriz[0],matriz[1],matriz[2]))
     print("        |        |        ")
     print("-------------------------")
     print("        |        |        ")
-    print("4  {}    |5  {}   |6  {}      ".format(matriz[3],matriz[4],matriz[5]))
+    print("4  {}    |5   {}   |6  {}      ".format(matriz[3],matriz[4],matriz[5]))
     print("        |        |        ")
     print("-------------------------")
     print("        |        |        ")
-    print("7  {}    |8  {}   |9  {}      ".format(matriz[6],matriz[7],matriz[8]))
+    print("7  {}    |8   {}   |9  {}      ".format(matriz[6],matriz[7],matriz[8]))
     print("        |        |        ")
 
 
@@ -125,25 +125,32 @@ while True:
 
         if victoria(matriz):
             if ganador%2==0:
-                print("**Gana el jugador**")
+                print("***************************")
+                print("**JUGADOR GANA LA PARTIDA**")
+                print("***************************")
                 print("**Fin del juego**")
                 print("\nReiniciando...")
                 time.sleep(5)
                 partida=False
             else: 
-                print("**Gana el ordenador**")
+                print("***************************")
+                print("**ORDENADOR GANA LA PARTIDA**")
+                print("***************************")
                 print("**Fin del juego**")
                 print("\nReiniciando...")
                 time.sleep(5)
                 partida=False
         elif empate(matriz):
-                print("**Empate**")
+                print("***************************")
+                print("** EMPATE **")
+                print("***************************")
                 print("**Fin del juego**")
                 print("\nReiniciando...")
                 time.sleep(5)
                 partida=False
 
         elif ganador%2==0:
+            print(" ")
             print("el ordenador esta pensando")
             time.sleep(2)
             movimientos_ordenador()
